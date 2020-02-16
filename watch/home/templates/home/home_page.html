@@ -3,63 +3,63 @@
 {% load wagtailimages_tags %}
 {% block slider %}
 
-<aside id="colorlib-hero">
-    <div class="flexslider">
-        <ul class="slides">
-           {% for post in page.get_children.specific %}
-           {% image post.image original as tmp_photo %}
-           <li style="background-image: url({{ tmp_photo.url }});">
-               <div class="overlay"></div>
-               <div class="container">
-                   <div class="row">
-                       <div class="col-md-6 col-md-pull-3 col-sm-12 col-xs-12 col-md-offset-3 slider-text">
-                           <div class="slider-text-inner">
-                               <div class="desc">
-                                   <p class="meta">
-                                        <span class="cat"><a href="#">系列</a></span>
-                                        <!-- <span class="pos">By <a href="#">Rich</a></span> -->
-                                    </p>
-                                   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-                                   <h4>{{ post.intro }}</h4>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </li>
-           {% endfor %}
-          </ul>
-      </div>
-</aside>
+<!--<aside id="colorlib-hero">-->
+<!--    <div class="flexslider">-->
+<!--        <ul class="slides">-->
+<!--           {% for post in page.get_children.specific %}-->
+<!--           {% image post.image original as tmp_photo %}-->
+<!--           <li style="background-image: url({{ tmp_photo.url }});">-->
+<!--               <div class="overlay"></div>-->
+<!--               <div class="container">-->
+<!--                   <div class="row">-->
+<!--                       <div class="col-md-6 col-md-pull-3 col-sm-12 col-xs-12 col-md-offset-3 slider-text">-->
+<!--                           <div class="slider-text-inner">-->
+<!--                               <div class="desc">-->
+<!--                                   <p class="meta">-->
+<!--                                        <span class="cat"><a href="#">系列</a></span>-->
+<!--                                        &lt;!&ndash; <span class="pos">By <a href="#">Rich</a></span> &ndash;&gt;-->
+<!--                                    </p>-->
+<!--                                   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>-->
+<!--                                   <h4>{{ post.intro }}</h4>-->
+<!--                               </div>-->
+<!--                           </div>-->
+<!--                       </div>-->
+<!--                   </div>-->
+<!--               </div>-->
+<!--           </li>-->
+<!--           {% endfor %}-->
+<!--          </ul>-->
+<!--      </div>-->
+<!--</aside>-->
 {% endblock %}
 
 {% block content %}
 <div id="colorlib-container">
-<!--    <div class="container">-->
-<!--        <div class="row row-pb-md">-->
+    <div class="container">
+        <div class="row row-pb-md">
 
-<!--            {% for post in page.get_children.specific %}-->
-<!--            <div class="col-md-6">-->
-<!--                <div class="blog-entry">-->
-<!--                    <div class="blog-img">-->
-<!--                        {% image post.image original as tmp_photo %}-->
-<!--                        <a href="{{ post.url }}"><img src="{{ tmp_photo.url }}" class="img-responsive" alt="html5 bootstrap template"></a>-->
-<!--                    </div>-->
-<!--                    <div class="desc">-->
-<!--                        <p class="meta">-->
-<!--                            <span class="cat"><a href="#">Events</a></span>-->
-<!--                            <span class="date">20 March 2018</span>-->
-<!--                            <span class="pos">By <a href="#">Rich</a></span>-->
-<!--                        </p>-->
+            {% for post in page.get_children.specific %}
+            <div class="col-md-6">
+                <div class="blog-entry">
+                    <div class="blog-img">
+                        {% image post.image original as tmp_photo %}
+                        <a href="{{ post.url }}"><img src="{{ tmp_photo.url }}" class="img-responsive" alt="html5 bootstrap template"></a>
+                    </div>
+                    <div class="desc">
+                        <p class="meta">
+                            <span class="cat"><a href="#">Events</a></span>
+                            <span class="date">20 March 2018</span>
+                            <span class="pos">By <a href="#">Rich</a></span>
+                        </p>
 
-<!--                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>-->
-<!--                        <p>A small river named Duden flows by their place and supplies it with the necessary </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            {% endfor %}-->
-<!--        </div>-->
-<!--    </div>-->
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                        <p>{{ post.intro }} </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
 
