@@ -9,12 +9,13 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 
 class BlogIndexPage(Page):
-    intro = RichTextField(blank=True)
+    intro = models.CharField(max_length=250)
     image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, related_name='+', blank=True, null=True
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel('intro'),
         ImageChooserPanel('image')
     ]
 
